@@ -3,13 +3,13 @@ public class Main {
         Cliente rodrigo = new Cliente();
         rodrigo.setNome("Rodrigo");
 
-        Conta cc = new ContaCorrente(rodrigo);
-        cc.depositar(100);
+        Conta contaCorrente = new ContaCorrente(rodrigo);
+        Conta contaPoupanca = new ContaPoupanca(rodrigo);
 
-        Conta cp = new ContaPoupanca(rodrigo);
-        cc.transferir(100, cp);
+        contaCorrente.depositar(100);
+        contaCorrente.transferir(100, contaPoupanca);
 
-        cc.imprimirExtrato();
-        cp.imprimirExtrato();
+        contaCorrente.imprimirExtrato();
+        contaPoupanca.imprimirExtrato();
     }
 }
