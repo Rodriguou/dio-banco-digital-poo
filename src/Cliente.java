@@ -6,6 +6,9 @@ public class Cliente {
     }
 
     public void setNome(String nome) {
+        if (nome == null || nome.trim().isEmpty()) {
+            throw new IllegalArgumentException("O nome não pode ficar vazio.");
+        }
         this.nome = nome;
     }
 }
